@@ -24,3 +24,4 @@ data = data.drop('title 4',axis = 1)
 
 DataFrame(data).to_excel('1.xlsx', sheet_name='Sheet1', index=False, header=True)
 
+
