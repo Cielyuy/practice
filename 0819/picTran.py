@@ -9,6 +9,7 @@ import matplotlib
 #文件夹位置
 clipDir1 = os.getcwd()
 clipDir = clipDir1
+print(clipDir)
 #字母
 re_ZiMu = re.compile(r'[a-z]+')
 re_XiaoShu = re.compile(r'\d+\.?\d*')
@@ -103,4 +104,4 @@ for i in df.columns:
         print("done!")
         # a1 = 1
         # b1 = 2
-        # c1 = 3
+        c1 = 3
