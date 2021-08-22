@@ -15,7 +15,7 @@ re_xiaoshu = re.compile(r'\d+\.?\d*')
 l1 = []
 l2 = []
 l3 = []
-
+##df.toexcel(file_path,index = False)
 abs_Path = os.path.abspath('.')
 file_Name = 'out_3-10000.txt'
 file_Dir = os.path.join(abs_Path , file_Name)
@@ -23,6 +23,7 @@ file_Dir = os.path.join(abs_Path , file_Name)
 with open(file_Dir, 'r',encoding='utf-8') as ot:
     
     for line in ot.readlines():
+        
         # print()
         # print(line)
         a = re_mat.findall(line)
@@ -37,7 +38,7 @@ with open(file_Dir, 'r',encoding='utf-8') as ot:
 
 # print(l1)
 #read
-outputFile_Name = 'result4.xlsx'
+outputFile_Name = 'result5.xlsx'
 outputFile_Dir = os.path.join(abs_Path , outputFile_Name)
 
 wb = xw.Book()  # 创建新的工作簿
@@ -53,6 +54,7 @@ data = pd.read_excel(outputFile_Dir)
 data['time-step'] = l1
 data['flow'] = l2
 data['Specify_V'] = l3
+data['time-step'] = l2
 
 DataFrame(data).to_excel(outputFile_Dir, sheet_name='Sheet1', index=False, header=True)
 
